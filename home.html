@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221104003238">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221111162710">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +27,20 @@
 					</div>
 					<div class="header__content">
 						<div class="header__menu menu">
-							<h2 class="menu__title visually-hidden">Меню сайта</h2>
+							<h2 class="menu__title visually-hidden">Навигация сайта</h2>
 							<nav class="menu__body">
 								<ul class="menu__list">
-									<li class="menu__item"><a href="##" class="menu__link link">Расписание тура</a></li>
-									<li class="menu__item"><a href="##" class="menu__link link">Как записаться</a></li>
-									<li class="menu__item"><a href="##" class="menu__link link">Команда</a></li>
-									<li class="menu__item menu__item-cost"><a href="##" class="menu__link link">Стоимость</a></li>
+									<li class="menu__item"><a href="##" class="menu__link link" data-goto=".program__container">Расписание
+											тура</a>
+									</li>
+									<li class="menu__item"><a href="##" class="menu__link link" data-goto=".request__content">Как
+											записаться</a></li>
+									<li class="menu__item"><a href="##" class="menu__link link" data-goto=".team__container">Команда</a></li>
+									<li class="menu__item menu__item-cost"><a href="##" class="menu__link link" data-goto=".price__container">Стоимость</a></li>
 								</ul>
 							</nav>
 						</div>
-						<button data-da=".menu__list,479,last" class="menu__button-reg btn-secondary btn-secondary--active">Забронировать</button>
+						<button data-da=".menu__list,479,last" class="menu__button-reg btn-secondary btn-secondary--active" data-popup="#popup-online">Забронировать</button>
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 					</div>
 				</div>
@@ -45,7 +48,7 @@
 		</header>
 		<main class="page">
 			<h1 class="visually-hidden">Тур на камчатку</h1>
-			<section data-fullscreen class="page__dreams dreams">
+			<section class="page__dreams dreams" data-fullscreen data-watch>
 				<div class="dreams__container">
 					<div class="dreams__content">
 						<div class="dreams__column dreams__column-left">
@@ -57,7 +60,7 @@
 									жизнь.
 								</p>
 								<p class="dreams__schedule">
-									<a class="dreams__schedule-title link link-decor" href="##">Расписание тура
+									<a class="dreams__schedule-title link link-decor" href="##" data-goto=".program">Расписание тура
 									</a>
 									<span class="dreams__decor btn-decor">
 										<svg class="dreams__decor-image">
@@ -148,7 +151,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="program">
+			<section class="program" data-watch data-watch-threshold="0.25">
 				<h2 class="visually-hidden">Описание маршрута</h2>
 				<div class="program__container">
 					<div class="program__content">
@@ -164,7 +167,7 @@
 							двухместных
 							номерах. </p>
 					</div>
-					<ul class="program__list benefits">
+					<ul class="program__list benefits" data-watch>
 						<li class="program__item benefits__item">
 							<div class="benefits__wrapper">
 								<p class="benefits__title">Сложность</p>
@@ -204,7 +207,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="kamchatka">
+			<section class="kamchatka" data-watch data-watch-margin="-40% 0px -60% 0px">
 				<h2 class="visually-hidden">О камчатке</h2>
 				<div class="kamchatka__bg"></div>
 				<div class="kamchatka__container">
@@ -227,13 +230,16 @@
 					</div>
 				</div>
 			</section>
-			<section class="day1 day">
+			<section class="day1 day" data-watch>
 				<h2 class="visually-hidden">Первый день маршрута</h2>
-				<div class="day1__container decor__container">
-					<div class="day1__content">
+				<div class="day1__container">
+					<svg class="main-decor">
+						<use xlink:href="img/icons/icons.svg#svg-day-decor"></use>
+					</svg>
+					<div class="day1__content day__content">
 						<div class="day1__column-left">
-							<div class="day1__title title decor__title">
-								<h3 class="day1__title-day"><span class=" title-day">День 1. </span>Прибытие.</h3>
+							<div class="day1__title title decor__title day__title" data-watch data-watch-margin="0px 0px -60% 0px">
+								<h3 class="day1__title-day"><span class="title-day">День 1. </span>Прибытие.</h3>
 								<p class="day1__subtitle">
 									Встреча в
 									аэропорту и
@@ -254,7 +260,8 @@
 									термальной водой, шашлык, знакомство с группой, алкоголь, фейерверк не раньше 20:00). </p>
 								<p>После выезд (вид транспорта зависит от величины группы) на базу
 									отдыха в
-									курортный <a class="day1__description-link link link-decor" href="##"> поселок
+									курортный <a class="day1__description-link link link-decor" href="##" data-popup="#popup-par">
+										поселок
 										Паратунка</a>.</p>
 								<p class="day1__description-text"> <span class="day1__description-bold">Вечером</span>, после
 									прибытия на Камчатку всех участников
@@ -319,12 +326,12 @@
 					</div>
 				</div>
 			</section>
-			<section class="day2 day">
+			<section class="day2 day" data-watch>
 				<h2 class="visually-hidden">Второй день маршрута</h2>
 				<div class="day2__container">
-					<div class="day2__content">
+					<div class="day2__content day__content">
 						<div class="day2__row day2__row-top">
-							<div class="day2__title title decor__title">
+							<div class="day2__title title decor__title day__title" data-watch data-watch-margin="0px 0px -300px 0px">
 								<h3><span class="title-day">День 2. </span>Вилючинский
 									водопад,
 									вулкан и
@@ -409,7 +416,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="offer">
+			<section class="offer" data-watch data-watch-margin="-250px 0px 0px 0px">
 				<h2 class="visually-hidden">Наши преимущества</h2>
 				<div class="offer__container">
 					<div class="offer__content">
@@ -454,11 +461,11 @@
 					</div>
 				</div>
 			</section>
-			<section class="day3 day">
+			<section class="day3 day" data-watch>
 				<h2 class="visually-hidden">Третий день маршрута</h2>
 				<div class="day3__container">
-					<div class="day3__content">
-						<div class="day3__column day3__column-left">
+					<div class="day3__content day__content">
+						<div class="day3__column-left">
 							<div class="day3__slider-wrapper" dir='rtl'>
 								<div class="day3__slider day-slider swiper" dir="rtl">
 									<div class="day-slider__wrapper swiper-wrapper">
@@ -508,8 +515,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="day3__column day3__column-right">
-							<div class="day3__title title decor__title">
+						<div class="day3__column-right">
+							<div class="day3__title title decor__title day__title" data-watch data-watch-margin="-10%">
 								<h3><span class="title-day">День 3. </span> Горные цирки и водопады вулкана
 									Вачкажец
 								</h3>
@@ -534,12 +541,12 @@
 				<div class="day3__image-ibg--eagle">
 				</div>
 			</section>
-			<section class="day4 day">
+			<section class="day4 day" data-watch>
 				<h2 class="visually-hidden">Четвёртый день маршрута</h2>
 				<div class="day4__container">
 					<div class="day4__content">
-						<div class="day4__column day4__column-left">
-							<div class="day4__title title decor__title">
+						<div class="day4__column-left">
+							<div class="day4__title title decor__title day__title" data-watch data-watch-margin="-250px">
 								<h3><span class="title-day">День 4. </span>Экскурсия к подножию Авачинского
 									вулкана
 								</h3>
@@ -556,7 +563,7 @@
 								<p>Продолжительность – 8 часов. Трансфер в гостиницу.</p>
 							</div>
 						</div>
-						<div class="day4__column day4__column-right">
+						<div class="day4__column-right">
 							<div class="day4__slider day-slider swiper">
 								<div class="day-slider__wrapper day-slider__wrapper swiper-wrapper">
 									<div class="day-slider__slide swiper-slide">
@@ -608,11 +615,11 @@
 				</div>
 			</section>
 			<div class="day5-6__wrapper-background">
-				<section class="day5 day">
+				<section class="day5 day" data-watch>
 					<h2 class="visually-hidden">Пятый день маршрута</h2>
 					<div class="day5__container">
 						<div class="day5__content">
-							<div class="day5__column day5__column-left">
+							<div class="day5__column-left">
 								<div class="day5__slider-wrapper">
 									<div class="day5__slider day-slider swiper" dir="rtl">
 										<div class="day-slider__wrapper swiper-wrapper" dir="rtl">
@@ -663,8 +670,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="day5__column day5__column-right">
-								<div class="day5__title title decor__title">
+							<div class="day5__column-right">
+								<div class="day5__title title decor__title day__title" data-watch data-watch-margin="-250px">
 									<h3><span class="title-day">День 5. </span>Морская прогулка к острову
 										Старичков
 									</h3>
@@ -691,23 +698,22 @@
 						</div>
 					</div>
 				</section>
-				<section class="day6 day">
-					<div class="day6__clouds"></div>
-
+				<section class="day6 day" data-watch>
+					<h2 class="visually-hidden">Шестой день маршрута</h2>
 					<div class="day6__container">
 						<div class="day6__content">
-							<div class="day6__column day6__column-left">
-								<div class="day6__title title decor__title">
-									<h3 class="day6__title-day"><span class=" title-day">День 6. </span>Берег Тихого океана, экскурсия по
+							<div class=" day6__column-left">
+								<div class="day6__title title decor__title day__title" data-watch data-watch-margin="-250px">
+									<h3><span class=" title-day">День 6. </span>Берег Тихого океана, экскурсия по
 										городу</h3>
 								</div>
 								<div class="day6__description day__description">
-									<p class="day6__description-text">Поездка на берег Тихого океана, в район Халактырского пляжа.
+									<p>Поездка на берег Тихого океана, в район Халактырского пляжа.
 										Прогулка.
 										Обед в
 										городе. Обзорная экскурсия по г. Петропавловску-Камчатскому с посещением смотровых площадок. Рыбный
 										рынок.</p>
-									<p class="day6__description-text">Продолжительность -5 часов. Трансфер в гостиницу.</p>
+									<p>Продолжительность -5 часов. Трансфер в гостиницу.</p>
 								</div>
 								<div class="day6__additionally additionally">
 									<h4 class="additionally__title">Дополнительные услуги</h4>
@@ -721,46 +727,46 @@
 									</div>
 								</div>
 							</div>
-							<div class="day6__column day6__column-right">
+							<div class="day6__column-right">
 								<div class="day6__slider-wrapper">
 									<div class="day6__slider day-slider swiper">
-										<div class="day6__wrapper day-slider__wrapper swiper-wrapper">
-											<div class="day6__slide day-slider__slide swiper-slide">
-												<div class="day6__slide-content day-slide__content">
-													<div class="day6__slide-text day-slide__text day__slide-text">
-														<p class="day6__slide-title day-slide__title">Волновой SUP серфинг</p>
-														<p class="day6__slide-description day-slide__description">Какой-то вспомогательный текст, в
+										<div class="day-slider__wrapper swiper-wrapper">
+											<div class="day-slider__slide swiper-slide">
+												<div class="day-slide__content">
+													<div class="day-slide__text day__slide-text">
+														<p class="day-slide__title">Волновой SUP серфинг</p>
+														<p class="day-slide__description">Какой-то вспомогательный текст, в
 															котором кратко
 															описывается что на картинке.
 														</p>
 													</div>
-													<div class="day6__slide-image-ibg"><picture><source data-srcset="img/slides/slide8.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide8.png" alt="Волновой SUP серфинг"></picture>
+													<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide8.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide8.png" alt="Волновой SUP серфинг"></picture>
 													</div>
 												</div>
 											</div>
-											<div class="day6__slide day-slider__slide swiper-slide">
-												<div class="day6__slide-content day-slide__content">
-													<div class="day6__slide-text day-slide__text day__slide-text">
-														<p class="day6__slide-title day-slide__title">Халактырский пляж</p>
-														<p class="day6__slide-description day-slide__description">Гости Камчатки по традиции делают
+											<div class="day-slider__slide swiper-slide">
+												<div class="day-slide__content">
+													<div class="day-slide__text day__slide-text">
+														<p class="day-slide__title">Халактырский пляж</p>
+														<p class="day-slide__description">Гости Камчатки по традиции делают
 															фото в начале и
 															в конце путешествий.
 														</p>
 													</div>
-													<div class="day6__slide-image-ibg"><picture><source data-srcset="img/slides/slide9.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide9.png" alt="Халактырский пляж"></picture>
+													<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide9.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide9.png" alt="Халактырский пляж"></picture>
 													</div>
 												</div>
 											</div>
-											<div class="day6__slide day-slider__slide swiper-slide">
-												<div class="day6__slide-content day-slide__content">
-													<div class="day6__slide-text day-slide__text day__slide-text">
-														<p class="day6__slide-title day-slide__title">Название слайда</p>
-														<p class="day6__slide-description day-slide__description">Какой-то вспомогательный текст, в
+											<div class="day-slider__slide swiper-slide">
+												<div class="day-slide__content">
+													<div class="day-slide__text day__slide-text">
+														<p class="day-slide__title">Название слайда</p>
+														<p class="day-slide__description">Какой-то вспомогательный текст, в
 															котором кратко
 															описывается что на картинке.
 														</p>
 													</div>
-													<div class="day6__slide-image-ibg"><picture><source data-srcset="img/slides/slide22.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide22.png" alt="Дорога"></picture>
+													<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide22.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide22.png" alt="Дорога"></picture>
 													</div>
 												</div>
 											</div>
@@ -776,18 +782,24 @@
 					</div>
 				</section>
 			</div>
-			<section class="day7 day">
+			<section class="day7 day" data-watch>
+				<h2 class="visually-hidden">Седьмой день маршрута</h2>
 				<div class="day7__content">
 					<div class="day7__container">
-						<div class="day7__row day7__row-top">
+						<div class="day7__row-top">
 							<div class="day7__text">
-								<div class="day7__title title decor__title">
-									<h3 class="day7__title-day"><span class="title-day">День 7. </span>Вертолетная экскурсия
+								<div class="day7__title title decor__title day__title" data-watch data-watch-margin="-250px">
+									<h3><span class="title-day">День 7. </span>Вертолетная экскурсия
 										в Долину Гейзеров и кальдеру
 										вулкана Узон / свободный день</h3>
 								</div>
 								<div class="day7__description day__description">
-									<p class="day7__description-text">Экскурсия проводится в содружестве с «ВИТЯЗЬ-ТРЕВЕЛ», крупнейшим
+									<div class="day7__image-ibg day7__img" data-da=".day7__description, 479.98, 3">
+									</div>
+									<p class="day7__description-text">Экскурсия проводится в
+										содружестве
+										с
+										«ВИТЯЗЬ-ТРЕВЕЛ», крупнейшим
 										оператором
 										вертолётных туров на Камчатке.
 										Выезд в аэропорт «Витязь –Аэро». К вашим услугам –современный аэропортовый комплекс, включающий в
@@ -798,6 +810,7 @@
 										благоприятных
 										условиях, вы осмотрите два
 										действующих вулкана – Карымский и Малый Семячик из окон вертолёта.</p>
+
 									<p class="day7__description-text">Перелёт и посадка в кальдере Узон. Кальдера образовалась в
 										результате
 										обрушения
@@ -809,59 +822,59 @@
 								</div>
 							</div>
 						</div>
-						<div class="day7__row day7__row-bottom">
+						<div class="day7__row-bottom">
 							<div class="day7__slider-wrapper" dir='rtl'>
 								<div class="day7__slider day-slider swiper" dir="rtl">
-									<div class="day7__wrapper day-slider__wrapper swiper-wrapper">
-										<div class="day7__slide day-slider__slide swiper-slide" dir="ltr">
-											<div class="day7__slide-content day-slide__content">
-												<div class="day7__slide-text day-slide__text day__slide-text">
-													<p class="day7__slide-title day-slide__title">Название слайда</p>
-													<p class="day7__slide-description day-slide__description">Какой-то вспомогательный текст, в
+									<div class="day-slider__wrapper swiper-wrapper">
+										<div class="day-slider__slide swiper-slide" dir="ltr">
+											<div class="day-slide__content day7__slide-content">
+												<div class="day-slide__text day__slide-text">
+													<p class="day-slide__title">Название слайда</p>
+													<p class="day-slide__description">Какой-то вспомогательный текст, в
 														котором кратко
 														описывается
 														что на картинке.
 													</p>
 												</div>
-												<div class="day7__slide-image-ibg"><picture><source data-srcset="img/slides/slide10.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide10.png" alt="Водоём"></picture></div>
+												<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide10.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide10.png" alt="Водоём"></picture></div>
 											</div>
 										</div>
-										<div class="day7__slide day-slider__slide swiper-slide" dir="ltr">
-											<div class="day7__slide-content day-slide__content">
-												<div class="day7__slide-text day-slide__text day__slide-text">
-													<p class="day7__slide-title day-slide__title">Памятник “Здесь начинается Россия”</p>
-													<p class="day7__slide-description day-slide__description">Гости Камчатки по традиции делают
+										<div class="day-slider__slide swiper-slide" dir="ltr">
+											<div class="day-slide__content day7__slide-content">
+												<div class="day-slide__text day__slide-text">
+													<p class="day-slide__title">Памятник “Здесь начинается Россия”</p>
+													<p class="day-slide__description">Гости Камчатки по традиции делают
 														фото в
 														начале и
 														в конце путешествий.
 													</p>
 												</div>
-												<div class="day7__slide-image-ibg"><picture><source data-srcset="img/slides/slide11.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide11.png" alt="Источник"></picture>
+												<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide11.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide11.png" alt="Источник"></picture>
 												</div>
 											</div>
 										</div>
-										<div class="day7__slide day-slider__slide swiper-slide" dir="ltr">
-											<div class="day7__slide-content day-slide__content">
-												<div class="day7__slide-text day-slide__text day__slide-text">
-													<p class="day7__slide-title day-slide__title">Паратунка</p>
-													<p class="day7__slide-description day-slide__description">Какой-то вспомогательный текст, в
+										<div class="day-slider__slide swiper-slide" dir="ltr">
+											<div class="day-slide__content day7__slide-content">
+												<div class="day-slide__text day__slide-text">
+													<p class="day-slide__title">Паратунка</p>
+													<p class="day-slide__description">Какой-то вспомогательный текст, в
 														котором кратко
 														описывается что на картинке.
 													</p>
 												</div>
-												<div class="day7__slide-image-ibg"><picture><source data-srcset="img/slides/slide27.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide27.png" alt="Медведи на берегу"></picture>
+												<div class="day-slide__image-ibg"><picture><source data-srcset="img/slides/slide23.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/slides/slide23.png" alt="Медведи на берегу"></picture>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="slider-buttons" dir='rtl'>
+								<div class="slider-buttons day7__slider-buttons" dir='rtl'>
 									<button type="button" class="swiper-button-next day7__button-next swiper-button-next--black swiper-button-next--rtl"></button>
 									<button type="button" class="swiper-button-prev day7__button-prev swiper-button-prev--black swiper-button-prev--rtl"></button>
 								</div>
 							</div>
 							<div class="day7__description day__description day7__description-right" data-da=".day7__description, 999">
-								<p class="day7__description-departure">Перелёт и посадка в Налычевской долине. Купание в горячих
+								<p>Перелёт и посадка в Налычевской долине. Купание в горячих
 									источниках.
 									Здесь же вам предложат обед - горячее, чай и камчатский морс. Трансфер в гостиницу.</p>
 								<div class="day7__additionally additionally">
@@ -881,14 +894,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="day7-image"><picture><source data-srcset="img/day7/rocks.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="day7-image__pic" data-src="img/day7/rocks.png" alt="Скалы"></picture></div>
 			</section>
-			<section class="day8 day">
+			<section class="day8 day" data-watch>
+				<h2 class="visually-hidden">Восьмой день маршрута</h2>
 				<div class="day8__container">
 					<div class="day8__content">
 						<div class="day8__text">
-							<div class="day8__title title decor__title">
-								<h3 class="day8__title-day"><span class="title-day">День 8. </span>Отъезд с Камчатки. Трансфер в
+							<div class="day8__title title decor__title day__title" data-watch data-watch-margin="-250px">
+								<h3><span class="title-day">День 8. </span>Отъезд с Камчатки. Трансфер в
 									аэропорт</h3>
 							</div>
 							<div class="day8__subtitle">
@@ -898,6 +911,7 @@
 				</div>
 			</section>
 			<section class="price">
+				<h2 class="visually-hidden">Тарифы на услуги</h2>
 				<div class="price__background"></div>
 				<div class="price__container">
 					<h3 class="price__header title">Стоимость участия</h3>
@@ -972,13 +986,11 @@
 											<li class="suggestions__item">
 												<p class="suggestions__text">личные расходы</p>
 											</li>
-
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div data-da=".price__cost, 1199" class="price__info info">
-								<!-- <div class="info__content"> -->
 								<ul class="info__list">
 									<li class="info__item">
 										<a href="##" class="info__link link">Информация о бронях</a>
@@ -990,7 +1002,7 @@
 										<a href="##" class="info__link link">Условия договора и возврата</a>
 									</li>
 								</ul>
-								<div data-da=".cost__content, 699" class="info__send">
+								<div class="info__send" data-da=".cost__content, 699" data-goto=".request__content">
 									<button class="info__btn" type="button">
 										Отправить заявку</button>
 									<span class="info__btn-decor btn-decor">
@@ -1000,9 +1012,7 @@
 										</svg>
 									</span>
 								</div>
-								<!-- <span class='info__btn-decor'></span> -->
 							</div>
-							<!-- </div> -->
 						</div>
 						<div class="price__content-bottom">
 							<div class="info__request request">
@@ -1045,13 +1055,13 @@
 													<!-- попробовать value -->
 													<label class="form__label form__label-name" for="form-input__name">Имя участника</label>
 												</div>
-												<div class="form-info__content">
-													<input class="input form-info__input form-info__counter" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" value="1" id="form-input__counter">
+												<div class="form-info__content" data-counter>
+													<input class="input form-info__input form-info__counter" autocomplete="off" type="number" name="form[]" data-error="Ошибка" value="1" id="form-input__counter" min="0" max="999">
 													<label class="form__label form-info__label" for="form-input__counter">Количество
 														человек</label>
 													<div class="form-counter">
-														<span class="form-counter__plus"></span>
-														<span class="form-counter__minus"></span>
+														<span class="form-counter__plus form-counter__button"></span>
+														<span class="form-counter__minus form-counter__button"></span>
 													</div>
 												</div>
 											</fieldset>
@@ -1081,7 +1091,7 @@
 											</fieldset>
 											<fieldset class="form-calendar">
 												<legend class="visually-hidden">Форма для выбора даты</legend>
-												<input class="input form-calendar__input" type="text" name="form[calendar]" data-error="Ошибка" data-datepicker value="23.06 - 04.07">
+												<input class="input form-calendar__input" type="text" name="form[calendar]" data-error="Ошибка" value="23.06 - 04.07" data-datepicker>
 												<label class="form__label form-calendar__label" for="form[calendar]">Даты тура</label>
 												<span class="form-calendar__decor">
 													<svg class="form-calendar__decor-image">
@@ -1089,7 +1099,7 @@
 													</svg>
 												</span>
 											</fieldset>
-											<fieldset class="form-comments" data-autoheight>
+											<fieldset class="form-comments">
 												<legend class="form__label form-comments__title">Комментарии</legend>
 												<textarea class="input form-comments__textarea" autocomplete="off" name="form[textarea]" placeholder="Напишите ваш комментарий здесь" data-error="Ошибка"></textarea>
 											</fieldset>
@@ -1157,15 +1167,15 @@
 						</div>
 					</div>
 				</div>
+
 			</section>
-			<!-- <input data-datepicker type="text" name="123"> -->
-			<!-- </div> -->
+
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__content">
 					<div class="footer__column footer__left-column">
-						<div class="footer__nav footer-decor">
+						<div class="footer__nav footer__column-res footer-decor">
 							<a class="footer__logo" href="##">
 								<svg class="footer__logo-img">
 									<use xlink:href="img/icons/icons.svg#svg-footer-logo"></use>
@@ -1174,46 +1184,46 @@
 							<nav class="footer__navigation footer-navigation">
 								<ul class="footer-navigation__list">
 									<li class="footer-navigation__item">
-										<a class="footer-navigation__link link" href="##">Расписание тура</a>
+										<a class="footer-navigation__link link" href="##" data-goto=".program__container">Расписание тура</a>
 									</li>
 									<li class="footer-navigation__item">
-										<a class="footer-navigation__link link" href="##">Стоимость</a>
+										<a class="footer-navigation__link link" href="##" data-goto=".price__container">Стоимость</a>
 									</li>
 									<li class="footer-navigation__item">
-										<a class="footer-navigation__link link" href="##">Как записаться</a>
+										<a class="footer-navigation__link link" href="##" data-goto=".request__content">Как записаться</a>
 									</li>
 									<li class="footer-navigation__item">
-										<a class="footer-navigation__link link" href="##">Команда</a>
+										<a class="footer-navigation__link link" href="##" data-goto=".team__container">Команда</a>
 									</li>
 								</ul>
 							</nav>
 						</div>
-						<div class="footer__instagram footer-instagram">
+						<div class="footer__instagram footer__column-res footer-instagram">
 							<div class="footer-instagram__content footer-decor">
 								<div class="footer-instagram__account">
 									<a class="footer-instagram__link link" href="##">@dreamkamtour</a>
 									<a class="footer-instagram__btn btn-secondary btn-secondary--active" href=" ##">Подписаться</a>
 								</div>
 								<div class="footer-instagram__images">
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram1.png" alt="Автобус"></picture>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram1.png" alt="Автобус"></picture>
 									</a>
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram2.png" alt="Тюлень"></picture></a>
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram3.png" alt="Машины"></picture></a>
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram4.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram4.png" alt="Прыжки с высоты"></picture></a>
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram5.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram5.png" alt="Машины"></picture></a>
-									<a href="##">
-										<picture><source data-srcset="img/footer/instagram6.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/footer/instagram6.png" alt="Автобус"></picture></a>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram2.png" alt="Тюлень"></picture></a>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram3.png" alt="Машины"></picture></a>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram4.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram4.png" alt="Прыжки с высоты"></picture></a>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram5.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram5.png" alt="Машины"></picture></a>
+									<a class="footer-instagram__images-link" href="##">
+										<picture><source data-srcset="img/footer/instagram6.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="footer-instagram__image-ibg" data-src="img/footer/instagram6.png" alt="Автобус"></picture></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="footer__column footer__right-column">
-						<div class="footer__reviews footer-reviews footer-decor">
+						<div class="footer__reviews footer__column-res footer-reviews footer-decor">
 							<div class="footer-reviews__content">
 								<div class="footer-reviews__wrapper">
 									<a class="footer-reviews__title link" href="##">Смотрите видео отзывы наших клиентов</a>
@@ -1252,7 +1262,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="footer__address footer-address">
+						<div class="footer__address footer__column-res footer-address">
 							<div class="footer-address__content">
 								<div class="footer-address__top">
 									<a class="footer-address__tel link" href="tel:+77603542323">+ 7 (760) 354-23-23</a>
@@ -1282,17 +1292,97 @@
 			</div>
 		</footer>
 	</div>
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
+	<div class="popup popup-online" id="popup-online" aria-hidden="true">
+		<div class="popup__wrapper popup-online__wrapper">
+			<div class="popup__content popup-online__content">
+				<div class="popup-online__box">
+					<h2 class="popup-online__title">Онлайн-заявка</h2>
+					<div class="popup-online__form">
+						<form class="form" method="post" action="##">
+							<fieldset class="form-info">
+								<legend class="visually-hidden">Участники</legend>
+								<div class="form-info__content">
+									<input class="input form-info__input form-info__name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" id="form-input__name-popup" value="">
+									<label class="form__label form__label-name-popup" for="form-input__name-popup">Имя участника</label>
+								</div>
+								<div class="form-info__content" data-counter>
+									<input class="input form-info__input form-info__counter" autocomplete="off" type="number" name="form[]" data-error="Ошибка" value="1" id="form-input__counter-popup" min="0" max="999">
+									<label class="form__label form-info__label" for="form-input__counter-popup">Количество
+										человек</label>
+									<div class="form-counter">
+										<span class="form-counter__plus form-counter__button"></span>
+										<span class="form-counter__minus form-counter__button"></span>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-grass">
+								<legend class="form-grass__title">Тариф</legend>
+								<ul class="form-grass__list">
+									<li class="form-grass__item">
+										<input class="form-input__radio form-grass__radio visually-hidden" type="radio" name="form[radio]" data-error="Ошибка" id="form-radio__base-popup">
+										<label class="form-grass__label" for="form-radio__base-popup">Базовый (для
+											камчадал)</label>
+										<span class="form__cost form-grass__cost">79 000 руб</span>
+									</li>
+									<li class="form-grass__item">
+										<input class="form-input__radio form-grass__radio visually-hidden" type="radio" name="form[radio]" data-error="Ошибка" id="form-radio__accommodation-popup" checked>
+										<label class="form-grass__label" for="form-radio__accommodation-popup">Базовый +
+											проживание</label>
+										<span class="form__cost form-grass__cost">99 000 руб</span>
+									</li>
+									<li class="form-grass__item">
+										<input class="form-input__radio form-grass__radio visually-hidden" type="radio" name="form[radio]" data-error="Ошибка" id="form-radio__geyser-popup">
+										<label class="form-grass__label" for="form-radio__geyser-popup">Базовый +
+											проживание + долина
+											гейзеров</label>
+										<span class="form__cost form-grass__cost">179 000 руб</span>
+									</li>
+								</ul>
+							</fieldset>
+							<fieldset class="form-calendar">
+								<legend class="visually-hidden">Форма для выбора даты</legend>
+								<input class="input form-calendar__input" type="text" name="form[calendar-popup]" data-error="Ошибка" data-datepickerPopup value="23.06 - 04.07">
+								<label class="form__label form-calendar__label" for="form[calendar-popup]">Даты тура</label>
+								<span class="form-calendar__decor">
+									<svg class="form-calendar__decor-image">
+										<use xlink:href="img/icons/icons.svg#svg-calendar"></use>
+									</svg>
+								</span>
+							</fieldset>
+							<fieldset class="form-comments popup-online__form-comments">
+								<legend class="form__label form-comments__title">Комментарии</legend>
+								<textarea class="input form-comments__textarea" autocomplete="off" name="form[textarea]" placeholder="Напишите ваш комментарий здесь" data-error="Ошибка"></textarea>
+							</fieldset>
+							<button class="form__btn btn--active popup-online__form-btn" type="submit">Отправить заявку</button>
+						</form>
+					</div>
+				</div>
+				<button data-close type="button" class="popup__close popup__close--black" aria-label="Закрыть попап"></button>
+			</div>
+
+		</div>
+	</div>
+	<div class="popup popup-par popup" id="popup-par" aria-hidden="true">
+		<div class="popup__wrapper popup-par__wrapper">
+			<div class="popup__content popup-par__content">
+				<div class="popup-par__box">
+					<h2 class="popup-par__title">Паратунка</h2>
+					<p class="popup-par__text">Поселок Паратунка находится в долине одноименной реки, в 30 км от аэропорта, известен
+						лечебными термальными источниками. На его территории, да и вдоль трассы, находится множество баз отдыха с
+						бассейнами под открытым небом - в них можно отдыхать в любое время суток. Для проживающих на базах, как
+						правило,
+						стоимость купания входит в стоимость проживания. В горячей водичке «отмокают» после трудов и походов местные
+						жители
+						и гости Камчатки.</p>
+				</div>
+				<div class="popup-par__image-ibg"><picture><source data-srcset="img/popups/par.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/popups/par.png" alt="Настоящая Паратунка"></picture></div>
+				<button data-close type="button" class="popup__close popup-par__btn-close" aria-label="Закрыть попап"></button>
+				<button data-close class="popup-par__btn-back btn-secondary--active" type="button">Вернуться к маршруту</button>
 			</div>
 		</div>
 	</div>
-</div> -->
-	<script src="js/app.min.js?_v=20221104003238"></script>
+	</div>
+	<script src="js/app.min.js?_v=20221111162710"></script>
 </body>
 
 </html>
