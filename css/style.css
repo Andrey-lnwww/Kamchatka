@@ -187,6 +187,7 @@ h6 {
 
 body {
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 .lock body {
   overflow: hidden;
@@ -4912,7 +4913,7 @@ input[type=number] {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
   .no-webp .price__background{
-    background: url("../img/bg/price-bg@2x.png") 30%/cover no-repeat; }
+    background: url("../img/bg/price-bg@2x.png") bottom/cover no-repeat; }
   .price__background {
     background-position: top;
   }
@@ -6011,6 +6012,8 @@ input[type=number] {
 .form-calendar__input {
   padding-bottom: 0.5rem;
   padding-right: 1.625rem;
+  z-index: 10;
+  cursor: pointer;
 }
 .form-calendar__label {
   margin-bottom: 1rem;
@@ -7279,5 +7282,5 @@ button.swiper-pagination-bullet {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
-  .webp .price__background{ background: url(../img/bg/price-bg@2x.webp) 30%/cover no-repeat; }
+  .webp .price__background{ background: url(../img/bg/price-bg@2x.webp) bottom/cover no-repeat; }
 }

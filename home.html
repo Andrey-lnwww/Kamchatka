@@ -6,18 +6,21 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221114191235">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221114225653">
 	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="preload" href="css/style.min.css" as="style">
+	<link rel="preload" href="js/app.min.css" as="script">
+	<link rel="preload" href="img/bg/main-bg@2x.png" as="image">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" data-lp>
 			<div class="header__container">
 				<div class="header__wrapper">
-					<div class="header__logo logo">
+					<div class="header__logo logo" aria-label="Логотип сайта">
 						<a class="logo__link" href="##">
 							<svg class="logo__image">
 								<use xlink:href="img/icons/icons.svg#svg-logo"></use>
@@ -70,12 +73,12 @@
 							</div>
 							<div class="dreams__social social" data-da=".dreams__content,1199">
 								<h3 class="visually-hidden">Социальные сети</h3>
-								<a class="social__link social__facebook social--active" href="##">
+								<a class="social__link social__facebook social--active" href="##" aria-label="Ссылка на наш facebook">
 									<svg class="dreams__social-image social__image">
 										<use xlink:href="img/icons/icons.svg#svg-social-facebook"></use>
 									</svg>
 								</a>
-								<a class="social__link social__instagram social--active" href="##">
+								<a class="social__link social__instagram social--active" href="##" aria-label="Ссылка на наш instagram">
 									<svg class="dreams__social-image social__image">
 										<use xlink:href="img/icons/icons.svg#svg-social-instagram"></use>
 									</svg>
@@ -143,8 +146,8 @@
 								</div>
 							</div>
 							<div class="dreams-slider__buttons slider-buttons">
-								<button type="button" class="swiper-button-prev dreams__button-prev"></button>
-								<button type="button" class="swiper-button-next dreams__button-next"></button>
+								<button type="button" class="swiper-button-prev dreams__button-prev" aria-label='Предыдущий слайд'></button>
+								<button type="button" class="swiper-button-next dreams__button-next" aria-label='Следующий слайд'></button>
 							</div>
 						</div>
 					</div>
@@ -229,7 +232,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="day1 day clouds" data-watch>
+			<section class="day1 day clouds" data-watch data-watch-margin="0px 0px -100px 0px">
 				<h2 class="visually-hidden">Первый день маршрута</h2>
 				<div class="day1__container">
 					<svg class="main-decor">
@@ -318,14 +321,14 @@
 								</div>
 							</div>
 							<div class="day1__buttons slider-buttons">
-								<button type="button" class="swiper-button-prev day1__button-prev"></button>
-								<button type="button" class="swiper-button-next day1__button-next"></button>
+								<button type="button" class="swiper-button-prev day1__button-prev" aria-label="Предыдущий слайд"></button>
+								<button type="button" class="swiper-button-next day1__button-next" aria-label="Следующий слайд"></button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="day2 day" data-watch data-watch-margin="0px 0px -100px 0px">
+			<section class="day2 day" data-watch>
 				<h2 class="visually-hidden">Второй день маршрута</h2>
 				<div class="day2__container">
 					<div class="day2__content day__content">
@@ -392,8 +395,8 @@
 									</div>
 								</div>
 								<div class="slider-buttons day2__buttons">
-									<button type="button" class="swiper-button-next swiper-button-next--black day2__button-next"></button>
-									<button type="button" class="swiper-button-prev swiper-button-prev--black day2__button-prev"></button>
+									<button type="button" class="swiper-button-next swiper-button-next--black day2__button-next" aria-label="Следующий слайд"></button>
+									<button type="button" class="swiper-button-prev swiper-button-prev--black day2__button-prev" aria-label="Предыдущий слайд"></button>
 								</div>
 							</div>
 							<div class="day2__description day__description day2__description-right" data-da=".day2__description, 768">
@@ -511,8 +514,8 @@
 									</div>
 								</div>
 								<div class="slider-buttons day3__buttons">
-									<button type="button" class="swiper-button-next day3__button-next swiper-button-next--black"></button>
-									<button type="button" class="swiper-button-prev day3__button-prev swiper-button-prev--black"></button>
+									<button type="button" class="swiper-button-next day3__button-next swiper-button-next--black" aria-label="Следующий слайд"></button>
+									<button type="button" class="swiper-button-prev day3__button-prev swiper-button-prev--black" aria-label="Предыдущий слайд"></button>
 								</div>
 							</div>
 						</div>
@@ -609,8 +612,8 @@
 								</div>
 							</div>
 							<div class="slider-buttons day4__buttons">
-								<button type="button" class="swiper-button-next day4__button-next"></button>
-								<button type="button" class="swiper-button-prev day4__button-prev"></button>
+								<button type="button" class="swiper-button-next day4__button-next" aria-label="Следующий слайд"></button>
+								<button type="button" class="swiper-button-prev day4__button-prev" aria-label="Предыдущий слайд"></button>
 							</div>
 						</div>
 					</div>
@@ -667,8 +670,8 @@
 										</div>
 									</div>
 									<div class="slider-buttons day5__buttons">
-										<button type="button" class="swiper-button-next day5__button-next"></button>
-										<button type="button" class="swiper-button-prev day5__button-prev"></button>
+										<button type="button" class="swiper-button-next day5__button-next" aria-label="Следующий слайд"></button>
+										<button type="button" class="swiper-button-prev day5__button-prev" aria-label="Предыдущий слайд"></button>
 									</div>
 								</div>
 							</div>
@@ -775,8 +778,8 @@
 										</div>
 									</div>
 									<div class="slider-buttons day6__buttons">
-										<button type="button" class="swiper-button-next day6__button-next"></button>
-										<button type="button" class="swiper-button-prev day6__button-prev"></button>
+										<button type="button" class="swiper-button-next day6__button-next" aria-label="Следующий слайд"></button>
+										<button type="button" class="swiper-button-prev day6__button-prev" aria-label="Предыдущий слайд"></button>
 									</div>
 								</div>
 							</div>
@@ -871,8 +874,8 @@
 									</div>
 								</div>
 								<div class="slider-buttons day7__slider-buttons" dir='rtl'>
-									<button type="button" class="swiper-button-next day7__button-next swiper-button-next--black swiper-button-next--rtl"></button>
-									<button type="button" class="swiper-button-prev day7__button-prev swiper-button-prev--black swiper-button-prev--rtl"></button>
+									<button type="button" class="swiper-button-next day7__button-next swiper-button-next--black swiper-button-next--rtl" aria-label="Следующий слайд"></button>
+									<button type="button" class="swiper-button-prev day7__button-prev swiper-button-prev--black swiper-button-prev--rtl" aria-label="Предыдущий слайд"></button>
 								</div>
 							</div>
 							<div class="day7__description day__description day7__description-right" data-da=".day7__description, 999">
@@ -1024,21 +1027,21 @@
 										<div class="request__social-full social-full">
 											<ul class="social-full__list">
 												<li class="social-full__item">
-													<a class="social-full__link social--active" href="##">
+													<a class="social-full__link social--active" href="##" aria-label="Ссылка на наш instagram">
 														<svg class="social-full__icon social-full__icon--instagram">
 															<use xlink:href="img/icons/icons.svg#svg-social-instagram-online"></use>
 														</svg>
 													</a>
 												</li>
 												<li class="social-full__item">
-													<a class="social-full__link social--active" href="##">
+													<a class="social-full__link social--active" href="##" aria-label="Ссылка на наш facebook">
 														<svg class="social-full__icon social-full__icon--facebook">
 															<use xlink:href="img/icons/icons.svg#svg-social-facebook-online"></use>
 														</svg>
 													</a>
 												</li>
 												<li class="social-full__item">
-													<a class="social-full__link social--active" href="##">
+													<a class="social-full__link social--active" href="##" aria-label="Ссылка на наш вконтакте">
 														<svg class="social-full__icon social-full__icon--vk">
 															<use xlink:href="img/icons/icons.svg#svg-social-vk-online"></use>
 														</svg>
@@ -1054,7 +1057,6 @@
 												<legend class="visually-hidden">Участники</legend>
 												<div class="form-info__content">
 													<input class="input form-info__input form-info__name" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" id="form-input__name" value="">
-													<!-- попробовать value -->
 													<label class="form__label form__label-name" for="form-input__name">Имя участника</label>
 												</div>
 												<div class="form-info__content" data-counter>
@@ -1093,8 +1095,8 @@
 											</fieldset>
 											<fieldset class="form-calendar">
 												<legend class="visually-hidden">Форма для выбора даты</legend>
-												<input class="input form-calendar__input" type="text" name="form[calendar]" data-error="Ошибка" value="23.06 - 04.07" data-datepicker>
-												<label class="form__label form-calendar__label" for="form[calendar]">Даты тура</label>
+												<input class="input form-calendar__input" type="text" name="form[calendar]" data-error="Ошибка" value="23.06 - 04.07" data-datepicker id="form-calendar" aria-label="Выберите дату">
+												<label class="form__label form-calendar__label" for="form-calendar">Даты тура</label>
 												<span class="form-calendar__decor">
 													<svg class="form-calendar__decor-image">
 														<use xlink:href="img/icons/icons.svg#svg-calendar"></use>
@@ -1113,11 +1115,11 @@
 						</div>
 						<div class="price__content-book book">
 							<div class="book__content">
-								<h4 class="book__title">Что нужно знать отправляясь на Камчатку?</h4>
+								<p class="book__title">Что нужно знать отправляясь на Камчатку?</p>
 								<p class="book__subtitle">Получите памятку туриста просто оставив свой e-mail.</p>
 								<form class="book-form" action="GET" method="post">
-									<input class="input book-form__input" autocomplete="off" type="email" name="form[email]" data-error="Ошибка" placeholder="Ваш e-mail">
-									<label class="visually-hidden" for="form[email]"></label>
+									<input class="input book-form__input" autocomplete="off" type="email" name="form[email]" data-error="Ошибка" placeholder="Ваш e-mail" id="form-email">
+									<label class="visually-hidden" for="form-email"></label>
 									<button class="book-form__btn btn btn--active" type="submit">Получить</button>
 								</form>
 							</div>
@@ -1166,8 +1168,8 @@
 							</div>
 						</div>
 						<div class="slider-buttons team__buttons">
-							<button type="button" class="swiper-button-prev swiper-button-next--black team__button-prev"></button>
-							<button type="button" class="swiper-button-next swiper-button-prev--black team__button-next"></button>
+							<button type="button" class="swiper-button-prev swiper-button-next--black team__button-prev" aria-label="Предыдущий слайд"></button>
+							<button type="button" class="swiper-button-next swiper-button-prev--black team__button-next" aria-label="Следующий слайд"></button>
 						</div>
 					</div>
 				</div>
@@ -1204,6 +1206,7 @@
 							</nav>
 						</div>
 						<div class="footer__instagram footer__column-res footer-instagram">
+							<h2 class="visually-hidden">Наш инстаграм!</h2>
 							<div class="footer-instagram__content footer-decor">
 								<div class="footer-instagram__account">
 									<a class="footer-instagram__link link" href="##">@dreamkamtour</a>
@@ -1234,7 +1237,7 @@
 									<a class="footer-reviews__title link" href="##">Смотрите видео отзывы наших клиентов</a>
 									<p class="footer-reviews__subtitle">Перейти в Instagram</p>
 								</div>
-								<a class="footer-reviews__video" href="##">
+								<a class="footer-reviews__video" href="##" aria-label="Ссылка на видео">
 									<svg class="footer-reviews__play">
 										<use xlink:href="img/icons/icons.svg#svg-footer-play"></use>
 									</svg>
@@ -1244,21 +1247,21 @@
 								<p class="footer-social__title">Социальные сети</p>
 								<ul class="footer-social__list">
 									<li class="footer-social__item">
-										<a class="social--active footer-social__link" href="##">
+										<a class="social--active footer-social__link" href="##" aria-label="Cсылка на наш instagram">
 											<svg class="footer-social__icon footer-social__icon--instagram">
 												<use xlink:href="img/icons/icons.svg#svg-social-instagram-online"></use>
 											</svg>
 										</a>
 									</li>
 									<li class="footer-social__item">
-										<a class="social--active footer-social__link" href="##">
+										<a class="social--active footer-social__link" href="##" aria-label="Cсылка на наш facebook">
 											<svg class="footer-social__icon footer-social__icon--facebook">
 												<use xlink:href="img/icons/icons.svg#svg-social-facebook-online"></use>
 											</svg>
 										</a>
 									</li>
 									<li class="footer-social__item">
-										<a class="social--active footer-social__link" href="##">
+										<a class="social--active footer-social__link" href="##" aria-label="Cсылка на наш вконтакте">
 											<svg class="footer-social__icon footer-social__icon--vk">
 												<use xlink:href="img/icons/icons.svg#svg-social-vk-online"></use>
 											</svg>
@@ -1346,8 +1349,8 @@
 							</fieldset>
 							<fieldset class="form-calendar">
 								<legend class="visually-hidden">Форма для выбора даты</legend>
-								<input class="input form-calendar__input" type="text" name="form[calendar-popup]" data-error="Ошибка" data-datepickerPopup value="23.06 - 04.07">
-								<label class="form__label form-calendar__label" for="form[calendar-popup]">Даты тура</label>
+								<input class="input form-calendar__input" type="text" name="form-calendar-popup" data-error="Ошибка" data-datepickerPopup value="23.06 - 04.07" aria-label="Выберите дату">
+								<label class="form__label form-calendar__label" for="form-calendar-popup">Даты тура</label>
 								<span class="form-calendar__decor">
 									<svg class="form-calendar__decor-image">
 										<use xlink:href="img/icons/icons.svg#svg-calendar"></use>
@@ -1385,8 +1388,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<script src="js/app.min.js?_v=20221114191235"></script>
+	<script src="js/app.min.js?_v=20221114225653"></script>
 </body>
 
 </html>
