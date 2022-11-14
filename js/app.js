@@ -4542,6 +4542,9 @@
                     slideToClickedSlide: true,
                     loop: true,
                     lazy: true,
+                    watchOverflow: true,
+                    watchSlidesProgress: true,
+                    resizeObserver: true,
                     navigation: {
                         prevEl: ".dreams__button-prev",
                         nextEl: ".dreams__button-next"
@@ -4569,7 +4572,6 @@
                     slideToClickedSlide: true,
                     loop: true,
                     lazy: true,
-                    //! watchOverflow: true,
                     watchOverflow: true,
                     watchSlidesProgress: true,
                     resizeObserver: true,
@@ -5151,11 +5153,13 @@
         document.addEventListener("watcherCallback", (function(e) {
             const entry = e.detail.entry;
             const targetElement = entry.target;
+            if (targetElement.classList.contains("day") && targetElement.classList.contains("_watcher-view")) {
+                const mainDecorActive = document.querySelector(".main-decor");
+                mainDecorActive.classList.add("main-decor--active");
+            }
             if (targetElement.classList.contains("day1") && targetElement.classList.contains("_watcher-view")) {
                 const day1 = document.querySelector(".day1__content");
-                const mainDecorActive = document.querySelector(".main-decor");
                 day1.classList.add("fadeInUpMain");
-                mainDecorActive.classList.add("main-decor--active");
             }
             if (targetElement.classList.contains("day2") && targetElement.classList.contains("_watcher-view")) {
                 const day2 = document.querySelector(".day2__content");

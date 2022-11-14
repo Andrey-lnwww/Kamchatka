@@ -881,6 +881,39 @@ body::after {
           flex-direction: column;
   row-gap: 1.5625rem;
 }
+.day__content {
+  opacity: 0;
+  z-index: 10;
+}
+
+.clouds {
+  position: relative;
+}
+.no-webp .clouds::after{
+  background-image: url("../img/days/day-clouds.png"); }
+.clouds::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  min-height: 8rem;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  -webkit-animation: clouds 15s infinite linear;
+          animation: clouds 15s infinite linear;
+  bottom: -0.2%;
+  right: 0;
+  z-index: 8;
+  will-change: animation;
+}
+@media (max-width: 48em) {
+  .no-webp .clouds::after{
+    background-image: url("../img/days/day-clouds-tablet.png"); }
+}
+@media (min-width: 125em) {
+  .clouds::after {
+    background-repeat: repeat;
+  }
+}
 
 .decor__title {
   position: relative;
@@ -970,6 +1003,18 @@ body::after {
 .day1 {
   position: relative;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .day1{
+    background: url("../img/bg/day1@2x.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 48em) {
+  .no-webp .day1{
+    background: url("../img/bg/day1-tablet.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .day1{
+    background: url("../img/bg/day1-mobile.png") center center/cover no-repeat; }
+}
 .day1::before {
   content: "";
   position: absolute;
@@ -983,26 +1028,6 @@ body::after {
   -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
       -ms-transform: matrix(-1, 0, 0, 1, 0, 0);
           transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-.no-webp .day1::after{
-  background-image: url("../img/days/day-clouds.png"); }
-.day1::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  min-height: 8rem;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  -webkit-animation: clouds 15s infinite linear;
-          animation: clouds 15s infinite linear;
-  bottom: -0.2%;
-  right: 0;
-  z-index: 8;
-}
-@media (min-width: 125em) {
-  .day1::after {
-    background-repeat: repeat;
-  }
 }
 .day1__container {
   position: relative;
@@ -1305,10 +1330,6 @@ body::after {
     }
   }
 }
-.day2__container {
-  position: relative;
-  z-index: 10;
-}
 .day2__row-top {
   min-height: 21.375rem;
   margin-bottom: 3.875rem;
@@ -1499,10 +1520,17 @@ body::after {
   min-height: 29.6875rem;
   z-index: 2;
 }
-@media (min-width: 93.75em) {
-  .day3::after {
-    background-position-y: 20%;
-  }
+@media only screen and (max-width: 48em) {
+  .no-webp .day3::after{
+    background: url("../img/bg/day3-tablet.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .day3::after{
+    background: url("../img/bg/day3-mobile.png") right center/cover no-repeat; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .day3::after{
+    background: url("../img/bg/day3@2x.png") center center/cover no-repeat; }
 }
 .day3::before {
   height: 20%;
@@ -1512,8 +1540,6 @@ body::after {
   background: linear-gradient(0deg, #000000 23.35%, rgba(0, 0, 0, 0.572235) 60.21%, rgba(0, 0, 0, 0) 88.82%);
 }
 .day3__container {
-  position: relative;
-  z-index: 10;
   padding-bottom: 4.375rem;
 }
 @supports (padding-top: clamp( 4rem , 2.8571428571rem  +  2.380952381vw , 5rem )) {
@@ -1773,9 +1799,6 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 35px;
-     -moz-column-gap: 35px;
-          column-gap: 35px;
 }
 @supports ((-moz-column-gap: clamp( 0.0000000625rem , -4.9715907045rem  +  7.9545452273vw , 2.1875rem )) or (column-gap: clamp( 0.0000000625rem , -4.9715907045rem  +  7.9545452273vw , 2.1875rem ))) {
   .day4__content {
@@ -1893,16 +1916,21 @@ body::after {
   }
 }
 .no-webp .day5-6__wrapper-background{
-  background-image: url("../img/bg/day5.png"); }
+  background: url("../img/bg/day5.png") top center/cover no-repeat; }
 .day5-6__wrapper-background {
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+@media only screen and (max-width: 48em) {
+  .no-webp .day5-6__wrapper-background{
+    background: url("../img/bg/day5-tablet.png") center center/contain no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .day5-6__wrapper-background{
+    background: url("../img/bg/day5-mobile.png") center center/cover no-repeat; }
 }
 .day5-6__wrapper-background::before {
   content: "";
@@ -1931,10 +1959,6 @@ body::after {
 }
 
 .day5 {
-  position: relative;
-  z-index: 7;
-}
-.day5__container {
   position: relative;
 }
 @supports (padding-top: clamp( 5.125rem , 1.0535714286rem  +  8.4821428571vw , 8.6875rem )) {
@@ -2118,26 +2142,6 @@ body::after {
 @media (min-width: 62.5em) {
   .day6 {
     padding-bottom: 10.625rem;
-  }
-}
-.no-webp .day6::after{
-  background-image: url("../img/days/day-clouds.png"); }
-.day6::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  min-height: 8rem;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  -webkit-animation: clouds 15s infinite linear;
-          animation: clouds 15s infinite linear;
-  bottom: -0.2%;
-  right: 0;
-  z-index: 8;
-}
-@media (min-width: 125em) {
-  .day6::after {
-    background-repeat: repeat;
   }
 }
 @supports (padding-top: clamp( 5.1875rem , 1.8303571429rem  +  6.994047619vw , 8.125rem )) {
@@ -2591,19 +2595,16 @@ body::after {
 
 .day8 {
   position: relative;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(23.35%, #000000), color-stop(60.21%, rgba(0, 0, 0, 0.572235)), color-stop(88.82%, rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(bottom, #000000 23.35%, rgba(0, 0, 0, 0.572235) 60.21%, rgba(0, 0, 0, 0) 88.82%);
-  background: linear-gradient(0deg, #000000 23.35%, rgba(0, 0, 0, 0.572235) 60.21%, rgba(0, 0, 0, 0) 88.82%);
+}
+.day8::before, .day8::after {
+  content: "";
+  width: 100%;
+  position: absolute;
 }
 .no-webp .day8::before{
   background: url("../img/bg/day8.png") top center/cover no-repeat; }
 .day8::before {
-  content: "";
-  width: 100%;
   min-height: 44.875rem;
-  position: absolute;
-  top: -70px;
-  background-position-x: 74%;
   z-index: 1;
 }
 @supports (min-height: clamp( 31.25rem , 15.6785714286rem  +  32.4404761905vw , 44.875rem )) {
@@ -2626,6 +2627,28 @@ body::after {
     top: calc(-11.5rem + 7.125 * (100vw - 48rem) / 42);
   }
 }
+@media only screen and (max-width: 48em) {
+  .no-webp .day8::before{
+    background: url("../img/bg/day8-tablet.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .day8::before{
+    background: url("../img/bg/day8-mobile.png") right center/cover no-repeat; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .day8::before{
+    background: url("../img/bg/day8@2x.png") top center/cover no-repeat; }
+}
+.day8::after {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(23.35%, #000000), color-stop(60.21%, rgba(0, 0, 0, 0.572235)), color-stop(88.82%, rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(bottom, #000000 23.35%, rgba(0, 0, 0, 0.572235) 60.21%, rgba(0, 0, 0, 0) 88.82%);
+  background: linear-gradient(0deg, #000000 23.35%, rgba(0, 0, 0, 0.572235) 60.21%, rgba(0, 0, 0, 0) 88.82%);
+  z-index: 2;
+  height: 34.375rem;
+  height: 85%;
+  bottom: 0;
+  left: 0;
+}
 .day8__content {
   position: relative;
   display: -webkit-box;
@@ -2634,7 +2657,7 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 2;
+  z-index: 10;
 }
 @supports (padding-top: clamp( 5.25rem , -5.9642857143rem  +  23.3630952381vw , 15.0625rem )) {
   .day8__content {
@@ -2753,10 +2776,16 @@ input[type=number] {
 }
 
 .main-decor--active {
-  opacity: 1;
-  -webkit-transition: all 2s ease 2s;
-  -o-transition: all 2s ease 2s;
-  transition: all 2s ease 2s;
+  display: none;
+}
+@media (min-width: 90em) {
+  .main-decor--active {
+    opacity: 1;
+    -webkit-transition: all 2s ease 2s;
+    -o-transition: all 2s ease 2s;
+    transition: all 2s ease 2s;
+    display: block;
+  }
 }
 
 .btn-decor {
@@ -3806,7 +3835,18 @@ input[type=number] {
 
 .dreams {
   position: relative;
-  overflow: hidden;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .dreams{
+    background: url("../img/bg/main-bg@2x.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 48em) {
+  .no-webp .dreams{
+    background: url("../img/bg/main-bg-tablet.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .dreams{
+    background: url("../img/bg/main-bg-mobile.png") center center/cover no-repeat; }
 }
 .dreams::before, .dreams::after {
   content: "";
@@ -3893,6 +3933,7 @@ input[type=number] {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
+  z-index: 7;
 }
 @media (min-width: 75em) {
   .dreams__column-right {
@@ -4437,10 +4478,17 @@ input[type=number] {
   z-index: 1;
   height: 100%;
 }
-@media (max-width: 48em) {
-  .kamchatka__bg {
-    background-position: 33%;
-  }
+@media only screen and (max-width: 48em) {
+  .no-webp .kamchatka__bg{
+    background: url("../img/bg/path-bg-tablet.png") center center/cover no-repeat; }
+}
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .kamchatka__bg{
+    background: url("../img/bg/path-bg-mobile.png") center center/cover no-repeat; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .kamchatka__bg{
+    background: url("../img/bg/path-bg@2x.png") center center/cover no-repeat; }
 }
 .kamchatka__bg::before {
   content: "";
@@ -4843,31 +4891,29 @@ input[type=number] {
   }
 }
 .no-webp .price__background{
-  background: url("../img/bg/price-bg-try.png") top center/cover no-repeat; }
+  background: url("../img/bg/price-bg.png") center center/cover no-repeat; }
 .price__background {
   width: 100%;
   max-height: 70.5625rem;
   height: 100%;
   position: absolute;
   bottom: 0;
+  left: 0;
   z-index: -1;
-  background-position: 30%;
+  max-height: 56.75rem;
 }
-@media (min-width: 37.5em) {
-  .price__background {
-    background-position: top center;
-    max-height: 56.75rem;
-    background-position: 17%;
-  }
+@media only screen and (max-width: 48em) {
+  .no-webp .price__background{
+    background: url("../img/bg/price-bg-tablet.png") left center/cover no-repeat; }
 }
-@media (min-width: 48em) {
-  .price__background {
-    background-position: 47%;
-  }
+@media only screen and (max-width: 29.99875em) {
+  .no-webp .price__background{
+    background: url("../img/bg/price-bg-mobile.png") bottom center/cover no-repeat; }
 }
-@media (min-width: 62.5em) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em) {
+  .no-webp .price__background{
+    background: url("../img/bg/price-bg@2x.png") 30%/cover no-repeat; }
   .price__background {
-    max-height: 55.1875rem;
     background-position: top;
   }
 }
@@ -6554,21 +6600,6 @@ input[type=number] {
     min-height: 22.1875rem;
   }
 }
-.no-webp .popup-par__image-ibg::after{
-  background-image: url("../img/days/day-clouds.png"); }
-.popup-par__image-ibg::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  min-height: 6.25rem;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  -webkit-animation: clouds 15s infinite linear;
-          animation: clouds 15s infinite linear;
-  bottom: -0.2%;
-  right: 0;
-  will-change: animation;
-}
 
 @-webkit-keyframes clouds {
   0% {
@@ -6647,7 +6678,6 @@ input[type=number] {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   position: relative;
-  z-index: 3;
 }
 .fadeInUpMain:nth-child(2) {
   -webkit-animation-delay: 0.7s;
@@ -6899,11 +6929,6 @@ input[type=number] {
 .swiper-initialized .swiper-slide {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  -o-transition-property: transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
 }
 
 .swiper-android .swiper-slide,
@@ -6919,9 +6944,10 @@ input[type=number] {
 .swiper-slide {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
-  -o-transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
-  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  -webkit-transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
+  will-change: transform, transition;
 }
 .swiper-slide-active {
   opacity: 1;
@@ -6948,9 +6974,6 @@ input[type=number] {
   visibility: visible;
 }
 
-.day-slider__slide.swiper-slide-active {
-  will-change: transform;
-}
 .day-slider__slide.swiper-slide-active .day-slide__content {
   width: 320px;
   height: 320px;
@@ -6991,15 +7014,18 @@ input[type=number] {
   }
 }
 
+.dreams-slider__content {
+  -webkit-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+
 .swiper-slide-active.dreams__slide .dreams-slider__content {
   width: 270px;
   height: 270px;
   -webkit-transition: all 0.7s ease 0.5s;
   -o-transition: all 0.7s ease 0.5s;
   transition: all 0.7s ease 0.5s;
-}
-.swiper-slide-active.dreams__slide .dreams-slider__image-ibg {
-  padding-bottom: 100%;
 }
 .swiper-slide-active.dreams__slide .dreams-slider__image-ibg::before {
   opacity: 0;
@@ -7144,25 +7170,71 @@ button.swiper-pagination-bullet {
   background: url("../img/arrow-slider--black.svg") 0 0 no-repeat;
 }
 
+.webp .clouds::after{ background-image: url(../img/days/day-clouds.webp); }
+
+@media (max-width: 48em){
+  .webp .clouds::after{ background-image: url(../img/days/day-clouds-tablet.webp); }
+}
+
 .webp .day1{ background: url(../img/bg/day1.webp) center/cover no-repeat; }
 
-.webp .day1::after{ background-image: url(../img/days/day-clouds.webp); }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .day1{ background: url(../img/bg/day1@2x.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 48em){
+  .webp .day1{ background: url(../img/bg/day1-tablet.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .day1{ background: url(../img/bg/day1-mobile.webp) center center/cover no-repeat; }
+}
 
 .webp .day2::before{ background: url(../img/days/day2-volcano.webp) top right/cover no-repeat; }
 
 .webp .day3::after{ background: url(../img/bg/day3.webp) center/cover no-repeat; }
 
+@media only screen and (max-width: 48em){
+  .webp .day3::after{ background: url(../img/bg/day3-tablet.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .day3::after{ background: url(../img/bg/day3-mobile.webp) right center/cover no-repeat; }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .day3::after{ background: url(../img/bg/day3@2x.webp) center center/cover no-repeat; }
+}
+
 .webp .day3__image-ibg--eagle{ background: url(../img/days/day3-eagle.webp) 0 0 no-repeat; }
 
 .webp .day4::after{ background: url(../img/days/day4-seagulls.webp) 0 0 no-repeat; }
 
-.webp .day5-6__wrapper-background{ background-image: url(../img/bg/day5.webp); }
+.webp .day5-6__wrapper-background{ background: url(../img/bg/day5.webp) top center/cover no-repeat; }
 
-.webp .day6::after{ background-image: url(../img/days/day-clouds.webp); }
+@media only screen and (max-width: 48em){
+  .webp .day5-6__wrapper-background{ background: url(../img/bg/day5-tablet.webp) center center/contain no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .day5-6__wrapper-background{ background: url(../img/bg/day5-mobile.webp) center center/cover no-repeat; }
+}
 
 .webp .day7::before{ background: url(../img/days/day7-rocks.webp) top right/cover no-repeat; }
 
 .webp .day8::before{ background: url(../img/bg/day8.webp) top center/cover no-repeat; }
+
+@media only screen and (max-width: 48em){
+  .webp .day8::before{ background: url(../img/bg/day8-tablet.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .day8::before{ background: url(../img/bg/day8-mobile.webp) right center/cover no-repeat; }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .day8::before{ background: url(../img/bg/day8@2x.webp) top center/cover no-repeat; }
+}
 
 .webp .clouds-decor{ background: url(../img/day-1/clouds.webp) 0 0 no-repeat; }
 
@@ -7170,8 +7242,42 @@ button.swiper-pagination-bullet {
 
 .webp .dreams{ background: url(../img/bg/main-bg.webp) center center/cover no-repeat; }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .dreams{ background: url(../img/bg/main-bg@2x.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 48em){
+  .webp .dreams{ background: url(../img/bg/main-bg-tablet.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .dreams{ background: url(../img/bg/main-bg-mobile.webp) center center/cover no-repeat; }
+}
+
 .webp .kamchatka__bg{ background: url(../img/bg/path-bg.webp) 63%/cover no-repeat; }
 
-.webp .price__background{ background: url(../img/bg/price-bg-try.webp) top center/cover no-repeat; }
+@media only screen and (max-width: 48em){
+  .webp .kamchatka__bg{ background: url(../img/bg/path-bg-tablet.webp) center center/cover no-repeat; }
+}
 
-.webp .popup-par__image-ibg::after{ background-image: url(../img/days/day-clouds.webp); }
+@media only screen and (max-width: 29.99875em){
+  .webp .kamchatka__bg{ background: url(../img/bg/path-bg-mobile.webp) center center/cover no-repeat; }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .kamchatka__bg{ background: url(../img/bg/path-bg@2x.webp) center center/cover no-repeat; }
+}
+
+.webp .price__background{ background: url(../img/bg/price-bg.webp) center center/cover no-repeat; }
+
+@media only screen and (max-width: 48em){
+  .webp .price__background{ background: url(../img/bg/price-bg-tablet.webp) left center/cover no-repeat; }
+}
+
+@media only screen and (max-width: 29.99875em){
+  .webp .price__background{ background: url(../img/bg/price-bg-mobile.webp) bottom center/cover no-repeat; }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2) and (min-width: 90em), only screen and (-o-min-device-pixel-ratio: 2/1) and (-o-min-device-pixel-ratio: 2/1) and (min-width: 90em), only screen and (min-resolution: 2dppx) and (min-resolution: 192dpi) and (min-width: 90em){
+  .webp .price__background{ background: url(../img/bg/price-bg@2x.webp) 30%/cover no-repeat; }
+}
