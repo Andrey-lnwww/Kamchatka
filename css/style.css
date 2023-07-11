@@ -1516,7 +1516,7 @@ body::after {
   left: 0;
 }
 .no-webp .day3::after{
-  background: url("../img/bg/day3.png") center/cover no-repeat; }
+  background: url("../img/bg/day3.png") top/cover no-repeat; }
 .day3::after {
   min-height: 29.6875rem;
   z-index: 2;
@@ -1619,11 +1619,11 @@ body::after {
 }
 @media (max-width: 62.4375em) {
   .day3__buttons .swiper-button-next,
-.day3__buttons .swiper-button-prev {
+  .day3__buttons .swiper-button-prev {
     border: 1px solid #fff;
   }
   .day3__buttons .swiper-button-next::after,
-.day3__buttons .swiper-button-prev::after {
+  .day3__buttons .swiper-button-prev::after {
     background: url("../img/arrow-slider.svg") 0 0 no-repeat;
   }
 }
@@ -3729,6 +3729,9 @@ input[type=number] {
 .footer-social__link {
   display: inline-block;
   fill: #fff;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 .footer-social__icon {
   -webkit-transition: all 0.4s ease 0s;
@@ -3948,6 +3951,7 @@ input[type=number] {
 .dreams__content {
   min-width: 0;
   padding: 10.4375rem 0rem 2.5rem 0rem;
+  height: 100vh;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4764,9 +4768,6 @@ input[type=number] {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2.25rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 @supports ((-moz-column-gap: clamp( 2rem , 2.5357142857rem  +  -0.5952380952vw , 2.25rem )) or (column-gap: clamp( 2rem , 2.5357142857rem  +  -0.5952380952vw , 2.25rem ))) {
   .offer__list {
@@ -7084,14 +7085,14 @@ input[type=number] {
 }
 @media (any-hover: hover) {
   .swiper-button-next:hover,
-.swiper-button-prev:hover {
+  .swiper-button-prev:hover {
     border: 1px solid #f47648;
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
   }
   .swiper-button-next:hover::after,
-.swiper-button-prev:hover::after {
+  .swiper-button-prev:hover::after {
     background: url("../img/arrow-slider--active.svg") 0 0 no-repeat;
   }
 }
@@ -7196,7 +7197,7 @@ button.swiper-pagination-bullet {
 
 .webp .day2::before{ background: url(../img/days/day2-volcano.webp) top right/cover no-repeat; }
 
-.webp .day3::after{ background: url(../img/bg/day3.webp) center/cover no-repeat; }
+.webp .day3::after{ background: url(../img/bg/day3.webp) top/cover no-repeat; }
 
 @media only screen and (max-width: 48em){
   .webp .day3::after{ background: url(../img/bg/day3-tablet.webp) center center/cover no-repeat; }

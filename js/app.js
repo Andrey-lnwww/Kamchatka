@@ -77,7 +77,7 @@
                         }));
                     }
                     function h(e, t, n) {
-                        return [ '<div class="qs-controls' + (n ? " qs-blur" : "") + '">', '<div class="qs-arrow qs-left"></div>', '<div class="qs-month-year">', '<span class="qs-month">' + t.months[e.getMonth()] + "</span>", '<span class="qs-year">' + e.getFullYear() + "</span>", "</div>", '<div class="qs-arrow qs-right"></div>', "</div>" ].join("");
+                        return [ '<div class="qs-controls' + (n ? " qs-blur" : "") + '">', '<div class="qs-arrow qs-left"></div>', '<div class="qs-month-year' + (t.disableYearOverlay ? " qs-disabled-year-overlay" : "") + '">', '<span class="qs-month">' + t.months[e.getMonth()] + "</span>", '<span class="qs-year">' + e.getFullYear() + "</span>", "</div>", '<div class="qs-arrow qs-right"></div>', "</div>" ].join("");
                     }
                     function f(e, t, n) {
                         var a = t.currentMonth, r = t.currentYear, i = t.dateSelected, o = t.maxDate, s = t.minDate, l = t.showAllDates, d = t.days, c = t.disabledDates, u = t.startDay, h = t.weekendIndices, f = t.events, v = t.getRange ? t.getRange() : {}, m = +v.start, y = +v.end, p = g(new Date(e).setDate(1)), w = p.getDay() - u, D = w < 0 ? 7 : 0;
@@ -85,12 +85,12 @@
                         var b = p.getDate(), q = [], S = D + 7 * ((w + b) / 7 | 0);
                         S += (w + b) % 7 ? 7 : 0;
                         for (var M = 1; M <= S; M++) {
-                            var E = (M - 1) % 7, x = d[E], C = M - (w >= 0 ? w : 7 + w), L = new Date(r, a, C), Y = f[+L], j = C < 1 || C > b, P = j ? C < 1 ? -1 : 1 : 0, k = j && !l, O = k ? "" : L.getDate(), N = +L == +i, _ = E === h[0] || E === h[1], I = m !== y, A = "qs-square " + x;
-                            Y && !k && (A += " qs-event"), j && (A += " qs-outside-current-month"), !l && j || (A += " qs-num"), 
-                            N && (A += " qs-active"), (c[+L] || t.disabler(L) || _ && t.noWeekends || s && +L < +s || o && +L > +o) && !k && (A += " qs-disabled"), 
+                            var E = (M - 1) % 7, x = d[E], C = M - (w >= 0 ? w : 7 + w), L = new Date(r, a, C), Y = f[+L], j = C < 1 || C > b, O = j ? C < 1 ? -1 : 1 : 0, P = j && !l, k = P ? "" : L.getDate(), N = +L == +i, _ = E === h[0] || E === h[1], I = m !== y, A = "qs-square " + x;
+                            Y && !P && (A += " qs-event"), j && (A += " qs-outside-current-month"), !l && j || (A += " qs-num"), 
+                            N && (A += " qs-active"), (c[+L] || t.disabler(L) || _ && t.noWeekends || s && +L < +s || o && +L > +o) && !P && (A += " qs-disabled"), 
                             +g(new Date) == +L && (A += " qs-current"), +L === m && y && I && (A += " qs-range-start"), 
                             +L > m && +L < y && (A += " qs-range-middle"), +L === y && m && I && (A += " qs-range-end"), 
-                            k && (A += " qs-empty", O = ""), q.push('<div class="' + A + '" data-direction="' + P + '">' + O + "</div>");
+                            P && (A += " qs-empty", k = ""), q.push('<div class="' + A + '" data-direction="' + O + '">' + k + "</div>");
                         }
                         var R = d.map((function(e) {
                             return '<div class="qs-square qs-day">' + e + "</div>";
@@ -187,8 +187,8 @@
                                             s.currentYear = x.getFullYear(), s.currentMonth = x.getMonth(), s.currentMonthName = i[s.currentMonth], 
                                             u(s);
                                             for (var L, Y = s.calendar.querySelectorAll('[data-direction="0"]'), j = 0; !L; ) {
-                                                var P = Y[j];
-                                                P.textContent === b && (L = P), j++;
+                                                var O = Y[j];
+                                                O.textContent === b && (L = O), j++;
                                             }
                                             r = L;
                                         }
@@ -197,14 +197,14 @@
                                     o.contains("qs-submit") ? E(e, v, s) : f && r === s.el && (S(s), C(s));
                                 }
                             } else if ("focusin" === n && s) S(s), C(s); else if ("keydown" === n && 9 === t && s) q(s); else if ("keydown" === n && s && !s.disabled) {
-                                var k = !s.calendar.querySelector(".qs-overlay").classList.contains("qs-hidden");
-                                13 === t && k && l ? E(e, r, s) : 27 === t && k && l && M(!0, s);
+                                var P = !s.calendar.querySelector(".qs-overlay").classList.contains("qs-hidden");
+                                13 === t && P && l ? E(e, r, s) : 27 === t && P && l && M(!0, s);
                             } else if ("input" === n) {
                                 if (!s || !s.calendar.contains(r)) return;
-                                var O = s.calendar.querySelector(".qs-submit"), N = r.value.split("").reduce((function(e, t) {
+                                var k = s.calendar.querySelector(".qs-submit"), N = r.value.split("").reduce((function(e, t) {
                                     return e || "0" !== t ? e + (t.match(/[0-9]/) ? t : "") : "";
                                 }), "").slice(0, 4);
-                                r.value = N, O.classList[4 === N.length ? "remove" : "add"]("qs-disabled");
+                                r.value = N, k.classList[4 === N.length ? "remove" : "add"]("qs-disabled");
                             }
                         }
                     }
@@ -216,13 +216,13 @@
                             e.removeEventListener(n, t);
                         }));
                     }
-                    function P() {
+                    function O() {
                         S(this);
                     }
-                    function k() {
+                    function P() {
                         q(this);
                     }
-                    function O(e, t) {
+                    function k(e, t) {
                         var n = g(e), a = this.currentYear, r = this.currentMonth, i = this.sibling;
                         if (null == e) return this.dateSelected = void 0, p(this.el, this, !0), i && (y({
                             instance: this,
@@ -400,12 +400,12 @@
                                 currentYear: (d.startDate || d.dateSelected).getFullYear(),
                                 events: d.events || {},
                                 defaultView: d.defaultView,
-                                setDate: O,
+                                setDate: k,
                                 remove: R,
                                 setMin: N,
                                 setMax: _,
-                                show: P,
-                                hide: k,
+                                show: O,
+                                hide: P,
                                 navigate: F,
                                 toggleOverlay: B,
                                 onSelect: d.onSelect,
